@@ -1,5 +1,11 @@
 package com.pi.ppp.repository;
 
-public interface RequisitoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.pi.ppp.entity.Requisito;
+
+@Repository
+public interface RequisitoRepository extends JpaRepository<Requisito, Long>{
 
 }

@@ -1,5 +1,11 @@
 package com.pi.ppp.repository;
 
-public interface EstadoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.pi.ppp.entity.Estado;
+
+@Repository
+public interface EstadoRepository extends JpaRepository<Estado, Long>{
 
 }

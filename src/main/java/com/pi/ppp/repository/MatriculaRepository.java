@@ -1,5 +1,11 @@
 package com.pi.ppp.repository;
 
-public interface MatriculaRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.pi.ppp.entity.Matricula;
+
+@Repository
+public interface MatriculaRepository extends JpaRepository<Matricula, Long>{
 
 }

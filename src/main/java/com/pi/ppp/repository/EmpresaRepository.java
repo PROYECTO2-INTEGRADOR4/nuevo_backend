@@ -1,5 +1,11 @@
 package com.pi.ppp.repository;
 
-public interface EmpresaRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.pi.ppp.entity.Empresa;
+
+@Repository
+public interface EmpresaRepository extends JpaRepository<Empresa, Long>{
 
 }
