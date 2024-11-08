@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -33,4 +35,12 @@ public class Evaluacion {
 	private int nota;
 	@Column(name = "ESTAO", length = 1)
 	private char estado;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_ppp", nullable = false)
+	private Ppp ppp;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_criterio", nullable = false)
+	private Criterio criterio;
 }

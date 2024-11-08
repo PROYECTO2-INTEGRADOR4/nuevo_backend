@@ -1,10 +1,14 @@
 package com.pi.ppp.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,4 +28,12 @@ public class Representante {
 	private Long id;
 	@Column(name = "estado", length = 1)
 	private char estado;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_empresa", nullable = false)
+	private Empresa empresa;
+	
+	 @OneToOne(cascade = CascadeType.ALL)
+	 @JoinColumn(name = "id_persona")
+	 private Persona persona;
 }

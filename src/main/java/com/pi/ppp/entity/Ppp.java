@@ -1,12 +1,20 @@
 package com.pi.ppp.entity;
 
 import java.util.Date;
+import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -42,4 +50,32 @@ public class Ppp {
 	private int promedio;
 	@Column(name = "estado", length = 1)
 	private char estado;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_linea", nullable = false)
+	private Linea linea;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_matricula", nullable = false)
+	private Matricula matricula;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_empresa", nullable = false)
+	private Empresa empresa;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_estado", nullable = false)
+	private Estado estado2;
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "ppp")
+	@JsonIgnore
+	private Set<Evaluacion> evaluacion;
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "ppp")
+	@JsonIgnore
+	private Set<Actividad> actividad;
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "ppp")
+	@JsonIgnore
+	private Set<Detalleppp> detalleppp;
 }
