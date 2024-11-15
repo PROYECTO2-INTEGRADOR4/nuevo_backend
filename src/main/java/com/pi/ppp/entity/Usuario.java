@@ -16,6 +16,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,6 +24,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
+@Data
 @Getter
 @Entity
 @Table(name = "usuarios")
@@ -33,6 +35,8 @@ public class Usuario {
 	private Long id;
 	@Column(name = "usuario", length = 50)
 	private String usuario;
+	@Column(name = "email", length = 150)
+    private String email;
 	@Column(name = "clave", length = 50)
 	private String clave;
 	@Column(name = "estado", length = 1)

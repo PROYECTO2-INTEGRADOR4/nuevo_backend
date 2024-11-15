@@ -14,6 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,6 +22,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
+@Data
 @Getter
 @Entity
 @Table(name = "roles")
@@ -29,8 +31,8 @@ public class Rol {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_rol")
 	private Long id;
-	@Column(name = "rol", length = 100)
-	private String rol;
+	@Column(name = "nombre", length = 100)
+	private String nombre;
 	@Column(name = "estado", length = 1)
 	private char estado;
 	
