@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -25,7 +26,8 @@ import lombok.Setter;
 @Table(name = "evaluaciones")
 public class Evaluacion {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_evaluacion")
+	@SequenceGenerator(name = "seq_evaluacion", sequenceName = "seq_evaluacion", allocationSize = 1)
 	@Column(name = "id_evaluacion")
 	private Long id;
 	@Temporal(TemporalType.DATE)

@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,7 +22,8 @@ import lombok.Setter;
 @Table(name = "rubros")
 public class Rubro {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_rubro")
+	@SequenceGenerator(name = "seq_rubro", sequenceName = "seq_rubro", allocationSize = 1)
 	@Column(name = "id_rubro")
 	private Long id;
 	@Column(name = "peso")

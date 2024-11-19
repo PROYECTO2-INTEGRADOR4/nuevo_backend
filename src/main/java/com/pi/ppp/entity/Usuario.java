@@ -14,6 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,14 +31,15 @@ import lombok.Setter;
 @Table(name = "usuarios")
 public class Usuario {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_usuario")
+	@SequenceGenerator(name = "seq_usuario", sequenceName = "seq_usuario", allocationSize = 1)
 	@Column(name = "id_usuario")
 	private Long id;
 	@Column(name = "usuario", length = 50)
 	private String usuario;
-	@Column(name = "email", length = 150)
+	@Column(name = "email", length = 200)
     private String email;
-	@Column(name = "clave", length = 50)
+	@Column(name = "clave", length = 200)
 	private String clave;
 	@Column(name = "estado", length = 1)
 	private char estado;

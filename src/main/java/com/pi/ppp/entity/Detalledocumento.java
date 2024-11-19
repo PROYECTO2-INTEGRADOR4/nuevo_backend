@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -25,7 +26,8 @@ import lombok.Setter;
 @Table(name = "detalle_documento")
 public class Detalledocumento {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_detalledocumento")
+	@SequenceGenerator(name = "seq_detalledocumento", sequenceName = "seq_detalledocumento", allocationSize = 1)
 	@Column(name = "id_detalledocumento")
 	private Long id;
 	@Column(name = "archivo", length = 50)

@@ -12,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,7 +27,8 @@ import lombok.Setter;
 @Table(name = "criterios")
 public class Criterio {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_criterio")
+	@SequenceGenerator(name = "seq_criterio", sequenceName = "seq_criterio", allocationSize = 1)
 	@Column(name = "id_criterio")
 	private Long id;
 	@Column(name = "criterio_evaluacion", length = 50)

@@ -12,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,7 +27,8 @@ import lombok.Setter;
 @Table(name = "campus")
 public class Campus {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_campus")
+	@SequenceGenerator(name = "seq_campus", sequenceName = "seq_campus", allocationSize = 1)
 	@Column(name = "id_campus")
 	private Long id;
 	@Column(name = "nombre", length = 50)
@@ -35,7 +37,7 @@ public class Campus {
 	private String direccion;
 	@Column(name = "pagina_web", length = 200)
 	private String pagina_web;
-	@Column(name = "telefono", length = 15)
+	@Column(name = "telefono", length = 15)	
 	private String telefono;
 	@Column(name = "estado", length = 1)
 	private char estado;
