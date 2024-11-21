@@ -23,8 +23,8 @@ public class AuthServiceImpl implements AuthService {
     public String login(LoginDto loginDto) {
         // 01 - AuthenticationManager is used to authenticate the user
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-                loginDto.getUsuario(),
-                loginDto.getClave()
+                loginDto.getUsername(),
+                loginDto.getPassword()
         ));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);

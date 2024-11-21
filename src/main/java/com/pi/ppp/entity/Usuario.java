@@ -35,12 +35,12 @@ public class Usuario {
 	@SequenceGenerator(name = "seq_usuario", sequenceName = "seq_usuario", allocationSize = 1)
 	@Column(name = "id_usuario")
 	private Long id;
-	@Column(name = "usuario", length = 50)
-	private String usuario;
+	@Column(name = "username", length = 50)
+	private String username;
 	@Column(name = "email", length = 200)
     private String email;
-	@Column(name = "clave", length = 200)
-	private String clave;
+	@Column(name = "password", length = 200)
+	private String password;
 	@Column(name = "estado", length = 1)
 	private char estado;
 	
