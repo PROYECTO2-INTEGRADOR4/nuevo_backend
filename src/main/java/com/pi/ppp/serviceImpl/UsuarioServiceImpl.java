@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.pi.ppp.dao.UsuarioDao;
 import com.pi.ppp.entity.Usuario;
-import com.pi.ppp.repository.AccesoRepository;
 import com.pi.ppp.service.UsuarioService;
 
 @Service

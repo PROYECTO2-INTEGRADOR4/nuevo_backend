@@ -22,7 +22,7 @@ import com.pi.ppp.service.LineaService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/lineas")
+@RequestMapping("/lineas")
 @CrossOrigin(origins = "http://localhost:4200")
 public class LineaController {
 	@Autowired

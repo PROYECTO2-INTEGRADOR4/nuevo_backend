@@ -22,7 +22,7 @@ import com.pi.ppp.service.ProcesorequisitoService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/procesosrequisitos")
+@RequestMapping("/procesosrequisitos")
 @CrossOrigin(origins = "http://localhost:4200")
 public class ProcesorequisitoController {
 	@Autowired

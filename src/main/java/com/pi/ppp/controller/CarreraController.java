@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,12 +23,13 @@ import com.pi.ppp.service.CarreraService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/carreras")
+@RequestMapping("/carreras")
 @CrossOrigin(origins = "http://localhost:4200")
 public class CarreraController {
 	@Autowired
 	private CarreraService service;
 	
+	@PreAuthorize("hasRole('USER')")
 	@GetMapping
 	public ResponseEntity<List<Carrera>> readAll() {
 		try {
@@ -43,6 +45,7 @@ public class CarreraController {
 		}
 	}
 	
+	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping
 	public ResponseEntity<Carrera> crearCarrera(@Valid @RequestBody Carrera cr) {
 		try {
@@ -54,6 +57,7 @@ public class CarreraController {
 		}
 	}
 	
+	@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("/{id}")
 	public ResponseEntity<Carrera> getCarreraId(@PathVariable("id") Long id) {
 		try {
@@ -65,6 +69,7 @@ public class CarreraController {
 		}
 	}
 	
+	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Carrera> delCarrera(@PathVariable("id") Long id) {
 		try {
@@ -76,6 +81,7 @@ public class CarreraController {
 		}
 	}
 	
+	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("/{id}")
 	public ResponseEntity<Carrera> updateCarrera(@PathVariable("id") Long id, @Valid @RequestBody Carrera cr) {
 		Optional<Carrera> ca = service.read(id);

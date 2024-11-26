@@ -22,7 +22,7 @@ import com.pi.ppp.service.PersonaService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/personas")
+@RequestMapping("/personas")
 @CrossOrigin(origins = "http://localhost:4200")
 public class PersonaController {
 	@Autowired

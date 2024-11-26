@@ -2,7 +2,6 @@ package com.pi.ppp.controller;
 
 import lombok.AllArgsConstructor;
 
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.ppp.dto.AuthResponseDto;
 import com.pi.ppp.dto.LoginDto;
-import com.pi.ppp.entity.Usuario;
 import com.pi.ppp.service.AuthService;
 import com.pi.ppp.service.UsuarioService;
 

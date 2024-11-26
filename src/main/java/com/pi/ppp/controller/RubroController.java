@@ -22,7 +22,7 @@ import com.pi.ppp.service.RubroService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/rubros")
+@RequestMapping("/rubros")
 @CrossOrigin(origins = "http://localhost:4200")
 public class RubroController {
 	@Autowired

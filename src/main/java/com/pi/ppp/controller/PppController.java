@@ -22,7 +22,7 @@ import com.pi.ppp.service.PppService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/ppps")
+@RequestMapping("/ppps")
 @CrossOrigin(origins = "http://localhost:4200")
 public class PppController {
 	@Autowired

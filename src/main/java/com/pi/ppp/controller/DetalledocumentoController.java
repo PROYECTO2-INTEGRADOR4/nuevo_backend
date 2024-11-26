@@ -22,7 +22,7 @@ import com.pi.ppp.service.DetalledocumentoService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/detalledocumentos")
+@RequestMapping("/detalledocumentos")
 @CrossOrigin(origins = "http://localhost:4200")
 public class DetalledocumentoController {
 	@Autowired

@@ -2,8 +2,6 @@ package com.pi.ppp.dao;
 
 import java.util.List;
 import java.util.Optional;
-
-import com.pi.ppp.dto.AccesoDto;
 import com.pi.ppp.entity.Acceso;
 
 public interface AccesoDao {

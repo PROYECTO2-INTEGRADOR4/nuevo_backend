@@ -22,7 +22,7 @@ import com.pi.ppp.service.EvaluacionService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/evaluaciones")
+@RequestMapping("/evaluaciones")
 @CrossOrigin(origins = "http://localhost:4200")
 public class EvaluacionController {
 	@Autowired

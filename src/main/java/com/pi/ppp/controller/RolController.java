@@ -22,7 +22,7 @@ import com.pi.ppp.service.RolService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/roles")
+@RequestMapping("/roles")
 @CrossOrigin(origins = "http://localhost:4200")
 public class RolController {
 	@Autowired

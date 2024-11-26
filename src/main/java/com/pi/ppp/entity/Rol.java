@@ -44,10 +44,6 @@ public class Rol {
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "rol")
 	@JsonIgnore
-	private Set<Usuariorol> usuariorol;
-	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "rol")
-	@JsonIgnore
 	private Set<Procesorequisito> procesorequisito;
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "rol")

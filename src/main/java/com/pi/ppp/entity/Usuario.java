@@ -2,8 +2,6 @@ package com.pi.ppp.entity;
 
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,8 +10,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
@@ -45,9 +44,12 @@ public class Usuario {
 	@Column(name = "estado", length = 1)
 	private char estado;
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "usuario")
-	@JsonIgnore
-	private Set<Usuariorol> usuariorol;
+	 @ManyToMany(fetch = FetchType.EAGER)
+	    @JoinTable(name = "usuarios_roles",
+	            joinColumns = @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario"),
+	            inverseJoinColumns = @JoinColumn(name = "id_rol", referencedColumnName = "id_rol")
+	    )
+	    private Set<Rol> roles;
 	
 	 @OneToOne(cascade = CascadeType.ALL)
 	 @JoinColumn(name = "id_persona")

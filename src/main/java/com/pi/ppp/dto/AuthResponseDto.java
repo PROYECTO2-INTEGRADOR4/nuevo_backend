@@ -12,4 +12,8 @@ public class AuthResponseDto {
     public void setCarrera(String carrera) {
     	this.carrera = carrera;
     }
+    
+    public void setRol(String rol) {
+    	this.rol = rol;
+    }
 }

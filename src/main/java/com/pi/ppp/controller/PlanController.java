@@ -22,7 +22,7 @@ import com.pi.ppp.service.PlanService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/planes")
+@RequestMapping("/planes")
 @CrossOrigin(origins = "http://localhost:4200")
 public class PlanController {
 	@Autowired

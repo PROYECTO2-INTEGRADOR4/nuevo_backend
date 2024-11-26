@@ -22,7 +22,7 @@ import com.pi.ppp.service.AccesorolService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/Accesorolsroles")
+@RequestMapping("/accesoroles")
 @CrossOrigin(origins = "http://localhost:4200")
 public class AccesorolController {
 	@Autowired

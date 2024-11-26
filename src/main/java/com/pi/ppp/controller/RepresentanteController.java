@@ -22,7 +22,7 @@ import com.pi.ppp.service.RepresentanteService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/representantes")
+@RequestMapping("/representantes")
 @CrossOrigin(origins = "http://localhost:4200")
 public class RepresentanteController {
 	@Autowired

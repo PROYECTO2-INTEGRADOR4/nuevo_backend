@@ -22,7 +22,7 @@ import com.pi.ppp.service.EstadoService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/estados")
+@RequestMapping("/estados")
 @CrossOrigin(origins = "http://localhost:4200")
 public class EstadoController {
 	@Autowired

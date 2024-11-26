@@ -22,7 +22,7 @@ import com.pi.ppp.service.CriterioService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/criterios")
+@RequestMapping("/criterios")
 @CrossOrigin(origins = "http://localhost:4200")
 public class CriterioController {
 	@Autowired
