@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pi.ppp.dto.AccesoDto;
 import com.pi.ppp.entity.Acceso;
 import com.pi.ppp.service.AccesoService;
-import com.pi.ppp.service.GestorAccesoService;
 
 import jakarta.validation.Valid;
 
@@ -29,9 +28,6 @@ import jakarta.validation.Valid;
 public class AccesoController {
 	@Autowired
 	private AccesoService service;
-	
-	@Autowired
-	private GestorAccesoService service2;
 	
 	@GetMapping
 	public ResponseEntity<List<Acceso>> readAll() {
@@ -99,7 +95,7 @@ public class AccesoController {
      */
     @GetMapping("/por-rol/{idRol}")
     public List<AccesoDto> obtenerAccesosPorRol(@PathVariable Long idRol) {
-        return service2.obtenerAccesosJerarquicosPorRol(idRol);
+        return service.obtenerAccesosJerarquicosPorRol(idRol);
     }
 	
 	

@@ -44,5 +44,4 @@ public class AccesoDaoImpl implements AccesoDao{
 		// TODO Auto-generated method stub
 		return repository.findAll();
 	}
-
 }
