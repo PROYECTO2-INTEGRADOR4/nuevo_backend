@@ -1,5 +1,7 @@
 package com.pi.ppp.dto;
 
+import java.util.List;
+
 import lombok.Data;
 
 @Data
@@ -7,13 +9,13 @@ public class AuthResponseDto {
     private String accessToken;
     private String username;
     private String carrera;
-    private String rol;
+    private List<String> roles;
     
     public void setCarrera(String carrera) {
     	this.carrera = carrera;
     }
     
-    public void setRol(String rol) {
-    	this.rol = rol;
+    public void setRoles(List<String> roles) {
+    	this.roles = roles;
     }
 }

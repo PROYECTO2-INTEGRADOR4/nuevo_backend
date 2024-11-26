@@ -2,6 +2,8 @@ package com.pi.ppp.controller;
 
 import lombok.AllArgsConstructor;
 
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.ppp.dto.AuthResponseDto;
 import com.pi.ppp.dto.LoginDto;
+import com.pi.ppp.entity.Rol;
 import com.pi.ppp.service.AuthService;
 import com.pi.ppp.service.UsuarioService;
 
@@ -49,6 +52,11 @@ public class AuthController {
         authResponseDto.setAccessToken(token);
         authResponseDto.setUsername(usuario.getUsername());
         authResponseDto.setCarrera(usuario.getCarrera().getNombre());
+        authResponseDto.setRoles(
+        		usuario.getRoles().stream()
+        		.map(Rol::getNombre)
+        		.collect(Collectors.toList())
+        );
 
         //02 - Set the token as a response using JwtAuthResponse Dto class
         

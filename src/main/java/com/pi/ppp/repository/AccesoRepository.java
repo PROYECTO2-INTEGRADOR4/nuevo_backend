@@ -9,5 +9,5 @@ import com.pi.ppp.entity.Acceso;
 
 @Repository
 public interface AccesoRepository extends JpaRepository<Acceso, Long>{
-	List<Acceso> findByAccesorol_RolIdAndEstado(Long idRol, char estado);
+	List<Acceso> findByAccesorol_RolId(Long idRol);
 }
