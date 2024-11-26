@@ -54,9 +54,7 @@ public class Matricula {
 	@JoinColumn(name = "id_estudiante", nullable = false)
 	private Estudiante estudiante;
 	
-	@ManyToOne
-	@JoinColumn(name = "id_campus", nullable = false)
-	private Campus campus;
+	
 	
 	 @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "matricula")
 	 @JsonIgnore

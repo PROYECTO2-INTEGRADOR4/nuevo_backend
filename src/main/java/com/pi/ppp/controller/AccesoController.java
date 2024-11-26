@@ -16,17 +16,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pi.ppp.dto.AccesoDto;
 import com.pi.ppp.entity.Acceso;
 import com.pi.ppp.service.AccesoService;
+import com.pi.ppp.service.GestorAccesoService;
 
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/accesos")
+@RequestMapping("/accesos")
 @CrossOrigin(origins = "http://localhost:4200")
 public class AccesoController {
 	@Autowired
 	private AccesoService service;
+	
+	@Autowired
+	private GestorAccesoService service2;
 	
 	@GetMapping
 	public ResponseEntity<List<Acceso>> readAll() {
@@ -86,4 +91,16 @@ public class AccesoController {
 			
 		}
 	}
+	
+	/**
+     * Endpoint para obtener los accesos jerárquicos por rol.
+     * @param idRol ID del rol para el que se quieren obtener los accesos.
+     * @return Lista de accesos jerárquicos en formato DTO.
+     */
+    @GetMapping("/por-rol/{idRol}")
+    public List<AccesoDto> obtenerAccesosPorRol(@PathVariable Long idRol) {
+        return service2.obtenerAccesosJerarquicosPorRol(idRol);
+    }
+	
+	
 }

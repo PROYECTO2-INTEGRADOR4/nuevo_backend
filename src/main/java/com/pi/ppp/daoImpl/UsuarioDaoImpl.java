@@ -44,5 +44,10 @@ public class UsuarioDaoImpl implements UsuarioDao{
 		// TODO Auto-generated method stub
 		return repository.findAll();
 	}
+	
+	@Override
+	public Optional<Usuario> findByUsername(String username) {
+		return repository.findByUsername(username);
+	}
 
 }

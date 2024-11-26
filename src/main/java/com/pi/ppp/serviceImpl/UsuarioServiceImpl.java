@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.pi.ppp.dao.UsuarioDao;
 import com.pi.ppp.entity.Usuario;
+import com.pi.ppp.repository.AccesoRepository;
 import com.pi.ppp.service.UsuarioService;
 
 @Service
@@ -43,6 +44,12 @@ public class UsuarioServiceImpl implements UsuarioService{
 	public List<Usuario> readAll() {
 		// TODO Auto-generated method stub
 		return dao.readAll();
+	}
+	
+	@Override
+	public Optional<Usuario> findByUsername(String username) {
+		// TODO Auto-generated method stub
+		return dao.findByUsername(username);
 	}
 
 }

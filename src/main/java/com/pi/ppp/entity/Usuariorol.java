@@ -37,7 +37,4 @@ public class Usuariorol {
 	@JoinColumn(name = "id_rol", nullable = false)
 	private Rol rol;
 	
-	@ManyToOne
-	@JoinColumn(name = "id_carreracampus", nullable = false)
-	private Carreracampus carreracampus;
 }
