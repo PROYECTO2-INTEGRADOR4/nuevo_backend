@@ -54,10 +54,10 @@ public class AccesoServiceImpl implements AccesoService{
 	}
 
 	@Override
-	public List<AccesoDto> obtenerAccesosJerarquicosPorRol(Long idRol) {
+	public List<AccesoDto> obtenerAccesosJerarquicosPorRol(String nombreRol) {
 		// TODO Auto-generated method stub
-		System.out.println("ID Rol recibido: " + idRol);
-	    List<Acceso> accesos = repository.findByAccesorol_RolId(idRol);
+		System.out.println("ID Rol recibido: " + nombreRol);
+	    List<Acceso> accesos = repository.findByAccesorol_RolNombre(nombreRol);
 	    System.out.println("Accesos recuperados: " + accesos.size());
 		return construirJerarquia(accesos);
 	}

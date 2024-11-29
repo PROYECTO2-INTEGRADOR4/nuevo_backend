@@ -93,9 +93,9 @@ public class AccesoController {
      * @param idRol ID del rol para el que se quieren obtener los accesos.
      * @return Lista de accesos jerárquicos en formato DTO.
      */
-    @GetMapping("/por-rol/{idRol}")
-    public List<AccesoDto> obtenerAccesosPorRol(@PathVariable Long idRol) {
-        return service.obtenerAccesosJerarquicosPorRol(idRol);
+    @GetMapping("/por-rol/{nombreRol}")
+    public List<AccesoDto> obtenerAccesosPorRol(@PathVariable String nombreRol) {
+        return service.obtenerAccesosJerarquicosPorRol(nombreRol);
     }
 	
 	

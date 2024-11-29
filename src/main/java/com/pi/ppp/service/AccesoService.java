@@ -12,6 +12,6 @@ public interface AccesoService {
 	void delete(Long id);
 	Optional<Acceso> read(Long id);
 	List<Acceso> readAll();
-	List<AccesoDto> obtenerAccesosJerarquicosPorRol(Long idRol);
+	List<AccesoDto> obtenerAccesosJerarquicosPorRol(String nombreRol);
 	List<AccesoDto> construirJerarquia(List<Acceso> accesos);
 }

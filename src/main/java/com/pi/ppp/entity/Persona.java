@@ -37,9 +37,9 @@ public class Persona {
 	@Column(name = "apellidos", length = 50)
 	private String apellidos;
 	@Column(name = "dni", length = 8)
-	private char dni;
+	private String dni;
 	@Column(name = "telefono", length = 9)
-	private char telefono;
+	private String telefono;
 	@Column(name = "estado", length = 1)
 	private char estado;
 	
