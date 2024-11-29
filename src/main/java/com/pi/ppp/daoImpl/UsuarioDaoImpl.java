@@ -1,6 +1,7 @@
 package com.pi.ppp.daoImpl;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,12 @@ public class UsuarioDaoImpl implements UsuarioDao{
 	@Override
 	public Optional<Usuario> findByUsername(String username) {
 		return repository.findByUsername(username);
+	}
+
+	@Override
+	public List<Map<String, Object>> obtenerUsuariosPorCarrera() {
+		// TODO Auto-generated method stub
+		return repository.contarUsuariosPorCarrera();
 	}
 
 }

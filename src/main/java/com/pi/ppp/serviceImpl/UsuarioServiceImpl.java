@@ -1,6 +1,7 @@
 package com.pi.ppp.serviceImpl;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +50,12 @@ public class UsuarioServiceImpl implements UsuarioService{
 	public Optional<Usuario> findByUsername(String username) {
 		// TODO Auto-generated method stub
 		return dao.findByUsername(username);
+	}
+
+	@Override
+	public List<Map<String, Object>> obtenerUsuariosPorCarrera() {
+		// TODO Auto-generated method stub
+		return dao.obtenerUsuariosPorCarrera();
 	}
 
 }

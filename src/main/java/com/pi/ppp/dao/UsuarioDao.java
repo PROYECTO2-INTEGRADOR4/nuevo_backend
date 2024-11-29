@@ -1,6 +1,7 @@
 package com.pi.ppp.dao;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import com.pi.ppp.entity.Usuario;
@@ -12,4 +13,5 @@ public interface UsuarioDao {
 	Optional<Usuario> read(Long id);
 	List<Usuario> readAll();
 	Optional<Usuario> findByUsername(String username);
+    List<Map<String, Object>> obtenerUsuariosPorCarrera();
 }
