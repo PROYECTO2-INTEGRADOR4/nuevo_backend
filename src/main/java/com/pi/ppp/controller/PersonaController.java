@@ -90,6 +90,7 @@ public class PersonaController {
 		}
 	}
 	
+	@PreAuthorize("hasRole('SUPERVISOR')")
 	@GetMapping("/detalles")
 	public ResponseEntity<List<PersonaDto>> listarPersonas() {
 		return ResponseEntity.ok(service.obtenerPersonasConDetalles());
