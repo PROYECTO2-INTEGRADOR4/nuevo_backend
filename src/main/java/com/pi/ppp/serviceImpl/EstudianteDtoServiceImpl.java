@@ -3,12 +3,14 @@ package com.pi.ppp.serviceImpl;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.pi.ppp.dto.EstudianteDto;
 import com.pi.ppp.entity.Carreraplan;
 import com.pi.ppp.entity.Usuario;
 import com.pi.ppp.repository.UsuarioRepository;
 
+@Service
 public class EstudianteDtoServiceImpl {
 	
 	@Autowired

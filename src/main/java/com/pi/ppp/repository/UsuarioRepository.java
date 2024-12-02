@@ -12,6 +12,7 @@ import com.pi.ppp.entity.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
+	
 	 Optional<Usuario> findByUsername(String username);
 	 
 	 @Query("SELECT u.carrera.nombre AS carrera, COUNT(u) AS total " +
