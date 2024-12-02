@@ -9,7 +9,7 @@ import com.pi.ppp.entity.Carreraplan;
 import com.pi.ppp.entity.Usuario;
 import com.pi.ppp.repository.UsuarioRepository;
 
-public class EstudianteDtoImpl {
+public class EstudianteDtoServiceImpl {
 	
 	@Autowired
 	private UsuarioRepository repository;
@@ -19,29 +19,39 @@ public class EstudianteDtoImpl {
 				.orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 		
 		EstudianteDto esDto = new EstudianteDto();
+		
 		esDto.setNombres(usuario.getPersona().getNombres());
 		esDto.setApellidos(usuario.getPersona().getApellidos());
 		esDto.setEmail(usuario.getEmail());
 		esDto.setCarrera(usuario.getCarrera().getNombre());
 		esDto.setDni(usuario.getPersona().getDni());
 		esDto.setTelefono(usuario.getPersona().getTelefono());
+		
 		String plan = null;
         String correo_institucional = null;
         String codigo = null;
+        
         if (usuario.getPersona() != null) {
-            correo_institucional = usuario.getPersona().getEstudiante().getCorreo_institucional();
-           
+            if (usuario.getPersona().getEstudiante() != null) {
+                correo_institucional = usuario.getPersona().getEstudiante().getCorreo_institucional();
+                codigo = usuario.getPersona().getEstudiante().getCodigo();
+            }
         }
+
         if (usuario.getCarrera() != null && usuario.getCarrera().getCarreraplan() != null) {
-            // Obtener el primer plan (si existe)
             Optional<Carreraplan> optionalPlan = usuario.getCarrera().getCarreraplan().stream().findFirst();
-            
+            if (optionalPlan.isPresent()) {
+                plan = optionalPlan.get().getPlan().getPlan();
+            }
         }
         esDto.setPlan(plan);
+        esDto.setCorreo_institucional(correo_institucional);
+        esDto.setCodigo(codigo);
        
 
         return esDto;
         
 	}	
+
 
 }

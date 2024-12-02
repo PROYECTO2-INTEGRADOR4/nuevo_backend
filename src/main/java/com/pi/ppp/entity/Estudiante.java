@@ -36,7 +36,7 @@ public class Estudiante {
 	@Column(name = "correo_institucional", length = 150)
 	private String correo_institucional;
 	@Column(name = "codigo", length = 9)
-	private char codigo;
+	private String codigo;
 	@Column(name = "estado", length = 1)
 	private char estado;
 	
