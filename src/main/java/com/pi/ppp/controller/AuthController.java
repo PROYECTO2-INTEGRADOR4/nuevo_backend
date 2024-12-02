@@ -36,7 +36,6 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<AuthResponseDto> login(@RequestBody LoginDto loginDto){
 
-        //01 - Receive the token from AuthService
         String token = authService.login(loginDto);
         
         var usuarioOpt = usuarioService.findByUsername(loginDto.getUsername());
@@ -44,10 +43,8 @@ public class AuthController {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
 
-        // Recupera el usuario
         var usuario = usuarioOpt.get();
 
-        // Establece los valores en el DTO
         AuthResponseDto authResponseDto = new AuthResponseDto();
         authResponseDto.setAccessToken(token);
         authResponseDto.setUsername(usuario.getUsername());
@@ -58,11 +55,6 @@ public class AuthController {
         		.collect(Collectors.toList())
         );
 
-        //02 - Set the token as a response using JwtAuthResponse Dto class
-        
-        
-
-        //03 - Return the response to the user
         return new ResponseEntity<>(authResponseDto, HttpStatus.OK);
     }
 }

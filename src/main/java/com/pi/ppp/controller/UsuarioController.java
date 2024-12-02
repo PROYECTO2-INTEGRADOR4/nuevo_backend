@@ -89,7 +89,7 @@ public class UsuarioController {
 		}
 	}
 	
-	@PreAuthorize("hasRole('SECRETARIA')")
+	@PreAuthorize("hasRole('SUPERVISOR')")
 	@GetMapping("/totalcarrera")
     public ResponseEntity<List<Map<String, Object>>> contarUsuariosPorCarrera() {
         List<Map<String, Object>> resultados = service.obtenerUsuariosPorCarrera();
