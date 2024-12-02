@@ -10,8 +10,11 @@ import com.pi.ppp.dao.DetalledocumentoDao;
 import com.pi.ppp.entity.Detalledocumento;
 import com.pi.ppp.service.DetalledocumentoService;
 
+
+
+
 @Service
-public class DetalledocumentoServiceImpl implements DetalledocumentoService{
+public class DetalledocumentoServiceImpl implements DetalledocumentoService {
 	@Autowired
 	private DetalledocumentoDao dao;
 	
